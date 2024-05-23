@@ -21,6 +21,7 @@ jobs:
           ls -la
 
           if [ -f "$json_file" ]; then
+            echo ver1
             json_data=$(jq '.' "$json_file")
             echo $json_data
             base64_payload=$(jq -c '.' "$json_file" | base64)
