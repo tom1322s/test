@@ -16,7 +16,7 @@ jobs:
 
       - name: Aws step
         run: |
-          json_file="s3Buckets.json"
+          json_file="README.md"
 
           if exist "$json_file" ; then
             json_data=$(jq '.' "$json_file")
