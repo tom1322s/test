@@ -16,7 +16,7 @@ jobs:
 
       - name: Aws step
         run: |
-          json_file="README.md"
+          json_file="file.json"
 
           ls -la
 
