@@ -18,6 +18,8 @@ jobs:
         run: |
           json_file="README.md"
 
+          ls -la
+
           if exist "$json_file" ; then
             json_data=$(jq '.' "$json_file")
             echo $json_data
