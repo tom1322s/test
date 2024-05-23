@@ -1,0 +1,32 @@
+name: 'test'
+on:
+  workflow_dispatch:
+concurrency: test
+
+jobs:
+  terragrunt:
+    name: 'Terragrunt'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      
+
+
+      - name: Aws step
+        run: |
+          json_file="s3Buckets.json"
+
+          if exist "$json_file" ; then
+            json_data=$(jq '.' "$json_file")
+            echo $json_data
+            base64_payload=$(jq -c '.' "$json_file" | base64)
+            echo ver1
+          else
+            base64_payload=$(echo {} | base64)
+            echo ver2
+          fi
+          
+      
+      
